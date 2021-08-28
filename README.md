@@ -38,4 +38,4 @@ Written by [Cody Daniels](https://github.com/codydaniels).
 
 Released as open source by Fast Jackson LLC. 
 
-Photo by [Alina Vilchenko from Pexels](https://www.instagram.com/secretly_canadian/)
+Cat photo by [Alina Vilchenko from Pexels](https://www.instagram.com/secretly_canadian/)
