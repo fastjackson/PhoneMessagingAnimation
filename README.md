@@ -1,6 +1,7 @@
 # Phone Messaging Animation
 A customizable phone messagging app animation built with CSS + Javascript (GSAP)
 
+https://user-images.githubusercontent.com/70291/131207930-6db10345-b55b-4d32-8571-603a1e3a697b.mp4
 
 ## Quick Setup
 
