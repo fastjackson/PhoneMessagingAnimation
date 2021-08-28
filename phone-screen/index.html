@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Phone Message Animation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- JS Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/EasePack.min.js"></script>  <!-- ("EasePack" animation timing fuctions can't be deferred.)-->
+</head>
+
+<body>
+<div id="wrapper" class="wrapper">
+
+  <div class="header">
+    <div class="leftCaret">
+      <svg viewBox="0 0 9.0004568 16" stroke="var(--appleBlue)">
+        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M 7.9994606,15 0.99995859,7.9995021 8.0004566,1"/>
+      </svg>
+    </div>
+    <div id="photo" class="photo"></div>
+    <div class="nameWrapper">
+      <div class="name">
+        <span id="username"><!-- Username inserted by JS here--></span>&nbsp;<svg fill="none" viewBox="0 0 9.0004568 16" >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M 1.000996,15 8.000498,7.9995021 1,1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div id="cameraAppstoreIcons" class="cameraAppstoreIcons">
+      <svg viewBox="0 0 139.16908 39.929379">
+        <path
+           d="M 114.33225,5.8562725e-4 100.47131,0.01237623 c -25.06235,-0.1857549 -25.528662,39.92632477 0,39.91699977 l 13.86194,-0.01179 c 24.52389,0.07308 24.41426,-40.09436017 -0.001,-39.91700037275 z M 98.028971,31.557425 c -0.372,0.636 -1.041,0.989 -1.728,0.989 -0.343,0 -0.691,-0.088 -1.009,-0.274 -0.953,-0.559 -1.273,-1.784 -0.714,-2.736 l 0.291,-0.497 c 0.515,-0.162 1.057,-0.25 1.614,-0.234 h 0.005 c 1.023,0.03 1.879,0.493 2.463997,1.176 z m 11.241999,-4.755 H 93.857971 c -1.104,0 -2,-0.896 -2,-2 0,-1.104 0.896,-2 2,-2 h 4.665 l 5.865999,-10.01 -1.811,-3.0909998 c -0.559,-0.953 -0.239,-2.178 0.714,-2.737 0.953,-0.558 2.178,-0.239 2.737,0.714 l 0.678,1.157 0.678,-1.157 c 0.558,-0.953 1.783,-1.272 2.737,-0.714 0.953,0.559 1.273,1.784 0.714,2.737 l -7.677,13.1009998 h 4.18 c 0.625,0.416 1.162,0.966 1.549,1.64 l 0.003,0.004 c 0.44,0.765 0.537,1.593 0.38,2.356 z m 10.587,0 h -2.623 l 1.602,2.733 c 0.559,0.952 0.239,2.178 -0.714,2.736 -0.318,0.187 -0.666,0.274 -1.009,0.274 -0.687,0 -1.355,-0.354 -1.728,-0.989 l -6.151,-10.497 c -0.834,-1.549 -0.803,-3.427 0.109,-4.943 l 0.826,-1.373 4.721,8.059 h 4.967 c 1.104,0 2,0.896 2,2 0,1.104 -0.896,2 -2,2 z"
+           id="path833"
+           style="fill:#a4a1a4;fill-opacity:1"
+           sodipodi:nodetypes="ccccccsccccccccsssccccccccccccccscccscccccsss" />
+        <path
+           style="fill:#a4a1a4;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 129.14373,2.6522149 c 8.12814,10.7867711 9.49626,22.7625051 -0.34577,34.6526031 14.18969,-9.650925 13.34915,-25.343027 0.34577,-34.6526031 z"
+           id="path843"
+           sodipodi:nodetypes="ccc" />
+        <path
+           fill="a4a1a4ff"
+           d="M 0,10.047443 C 0,7.319138 2.3121849,5.0868885 5.1381885,5.0868885 H 12.845473 L 17.983662,0.12633157 H 33.39823 l 5.138189,4.96055693 h 7.707284 a 5.1381892,4.9605559 0 0 1 5.138189,4.9605545 v 24.802779 a 5.1381892,4.9605559 0 0 1 -5.138189,4.960557 H 5.1381885 A 5.1381892,4.9605559 0 0 1 0,34.850222 Z m 25.690946,24.802779 a 12.845473,12.40139 0 1 0 0,-24.802779 12.845473,12.40139 0 0 0 0,24.802779 z m 0,-4.960555 a 7.7072838,7.4408337 0 1 1 0,-14.881667 7.7072838,7.4408337 0 0 1 0,14.881667 z"
+           id="path863"
+           style="fill:#a4a1a4;fill-opacity:1;stroke-width:2.5243" />
+      </svg>
+    </div>
+    <div id="chevronSquareFill" class="chevronSquareFill">
+      <svg fill="currentColor" viewBox="0 0 16 16">
+        <path
+           d="M 0.05708771,3.5413681 C 0.06891576,1.7529329 2.2084688,-0.00680967 3.3130173,0 l 9.2597897,0.05708771 c 2.075002,0.01279264 3.495739,1.75179779 3.484281,3.48428039 L 16,12.173193 c -0.01486,2.246249 -1.294049,3.897046 -3.427193,3.883895 L 3.3130173,16 C 1.5805279,15.989319 -0.01447583,14.36198 0,12.173193 Z"
+           id="path843"
+           sodipodi:nodetypes="sssssssss"
+           style="fill:#a4a1a4;fill-opacity:1" />
+        <path
+           fill-rule="evenodd"
+           d="m 6.2365551,3.9145368 a 0.34875601,0.33704458 0 0 1 0.4938385,0 l 4.1850724,4.0445349 a 0.34875601,0.33704458 0 0 1 0,0.4772551 L 6.7303936,12.480862 A 0.34919656,0.33747033 0 0 1 6.2365551,12.003607 L 10.175406,8.1976992 6.2365551,4.3917919 a 0.34875601,0.33704458 0 0 1 0,-0.4772551 z"
+           id="path1987"
+           style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.738242;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </svg>
+    </div>
+  </div>
+
+  <div id="inputWrapper" class="inputWrapper">
+    <div id="inputBox" class="inputBox cursor"></div>
+    <div id="sendBtn" class="sendBtn">
+      <svg viewBox="0 0 182.94048 175.38094">
+        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1"  transform="translate(-15.119041,-31.750015)">
+          <path
+             style="fill:#4fcc6a;fill-opacity:1;stroke:none;stroke-width:15.9628;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+             id="path833"
+             sodipodi:type="arc"
+             sodipodi:cx="106.58928"
+             sodipodi:cy="119.44048"
+             sodipodi:rx="91.470238"
+             sodipodi:ry="87.690468"
+             sodipodi:start="0"
+             sodipodi:end="6.2692842"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             d="M 198.05952,119.44048 A 91.470238,87.690468 0 0 1 106.90716,207.13042 91.470238,87.690468 0 0 1 15.121251,120.04998 91.470238,87.690468 0 0 1 105.63564,31.754781 91.470238,87.690468 0 0 1 198.05068,118.22153" />
+          <path
+             style="fill:none;stroke:#ffffff;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 77.424871,114.64497 29.574999,-33.258477 -0.5369,82.971487 0.5369,-82.971487 28.32716,33.080647"
+             id="path835"
+             sodipodi:nodetypes="ccccc" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div id="messages" class="messages"></div>
+
+</div>
+
+<script src="./animation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    font-family: Open Sans;
+    background-color: rgb(74, 47, 69)!important;
+}
+
+.hero {
+    background-image:
+        linear-gradient(to right, rgba(156, 53, 134, 50) 0%, rgba(194, 74, 94, 50) 50%, rgba(227, 56, 14, 50) 100%),
+        linear-gradient(to bottom, rgba(194, 74, 84, 50) 0%, rgba(62, 113, 185, 50) 100%);
+}
+
+#phone-wrapper { 
+    padding:0px 0px 0px 2px;
+}
+
+.phone {
+    position: relative;
+    height: 522px;
+    width: 396px;
+    transform-origin: top left;
+    -webkit-font-smoothing: subpixel-antialiased;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.phone-body {
+    background-image: url(phone_background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    position: relative;
+    height: 100%;
+    width:100%;
+}
+
+.phone-animation{
+    position: absolute;
+    bottom: 0px;
+    left: 32px;
+    width: 325px;
+    height: 448px;
+    transform-origin: bottom;
+    background-color: white;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}

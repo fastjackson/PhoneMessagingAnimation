@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <!-- General -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Phone Message Animation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Phone Message Animation</title>
+</head>
+
+<body>
+  <div class="container-fluid hero">
+    <div class="row pt-3 pt-sm-5">
+
+      <!-- Phone Animation -->
+      <div id="phone-wrapper" class="phone-wrapper col pt-3 pt-sm-5 py-0">
+        <div id="phone" class="phone">
+          <iframe class="phone-animation" src="./phone-screen/index.html" frameborder="0" width="100%" height="100%"></iframe>
+          <div class="phone-body"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer p-3">
+  <div class="text-center text-white">
+    <h1>Phone Messaging Animation</h1>
+  </div>
+</div>
+
+<!-- Dynamically resize phone animation for small screens -->
+<script src="./resizePhone.js"></script>
+
+</body>
+</html>

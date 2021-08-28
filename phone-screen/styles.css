@@ -1,0 +1,300 @@
+/* General setup */
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+}
+
+body {
+  font-family:'Roboto',sans-serif;
+  overflow:hidden;
+}
+
+:root{
+  --darkGrey:#6a676b;
+  --lightGrey:#c4c7c8;
+  --appleBlue:#5680fe;
+  --appleGreen:#4fcc6a;
+}
+
+.wrapper{
+  position:absolute;
+  height:448px;
+  width: 325px;
+  left:50%;
+  top:50%;
+  overflow:hidden;
+  transform:translateX(-50%) translateY(-50%); 
+  background-color: white;
+  opacity:0;
+}
+
+/* Header */
+.header{
+  position:absolute;
+  z-index:5;
+  width:100%;
+  height:65px;
+  background-color: rgba(255,255,255,.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom:solid 1.5px rgba(0,0,0,.075);
+}
+
+.leftCaret{
+  position:absolute;
+  left:4.5%;
+  top:20%;
+  width:3%;
+}
+
+.leftCaret > svg {position:absolute;}
+
+.photo{
+  position: absolute;
+  width: 16%;
+  height: 68%;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  clip-path: circle(44% at 50% 50%);
+  background-size: 90%;
+  background-position: center center;
+  /* User profile image inserted by JS here */
+}
+
+.nameWrapper{
+  position: relative;
+  width:100%;
+  margin-top:15%;
+  margin-left:50%;
+  transform:translateX(-50%);
+  text-align: center;
+  white-space:nowrap;
+}
+
+.name{
+  position:relative;
+  font-size:9px;
+  margin-right:1%;
+  color:var(--darkGrey);
+  margin:auto;
+}
+
+.name > svg{
+  height:1.5%;
+  width:1.1%;
+  transform:translateY(10%);
+  stroke: var(--lightGrey);
+}
+
+/* Messages */
+.messages{
+  padding:65px 14px 0px 14px;
+  width:100%;
+  position:Absolute;
+  z-index:4;
+  top:0px;
+  font-size:0px;
+}
+
+.messageHeader{
+  height:24px;
+  margin:6px 0px 6px 0px;
+  font-size:10px;
+  font-weight: 400;
+  color:#a09fa1;
+  text-align: center;
+  opacity:0;
+}
+
+.incomingMessage, .localMessage{
+  width:100%;
+  display:inline-block;
+  opacity:0;
+}
+
+.localMessage{transform-origin: right;}
+
+.incomingMessage > div,.localMessage > div{
+  max-width:70%;
+  padding: 8px 16px 8px 16px;
+  font-size: 15px;
+  font-weight:300;
+  border-radius: 16px;
+  margin-bottom:1.5px;
+  position:relative;
+}
+
+.incomingMessage > div{
+  float:left;
+  color:black;
+  background-color: #e2e2e4;
+}
+
+.localMessage > div{
+  float:right;
+  color:black;
+  background-color: white;
+}
+
+.incomingMessage > div > span, .localMessage > div > span {
+  line-height:.5;
+}
+
+.spacer{
+  width:100%;
+  height:6px;
+  display:inline-block;
+}
+
+.incomingMessage > .tail:before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  bottom: 0px;
+  left: -9px;
+  height: 12px;
+  width: 15px;
+  background: #e2e2e4;
+  border-bottom-right-radius: 15px;
+  animation-name:fadeIn;
+  animation-duration:.1s;
+}
+
+.incomingMessage > .tail:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -1px;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-right-radius: 15px;
+}
+
+.localMessage > .tail:before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  bottom: 0;
+  right: -9px;
+  height: 12px;
+  width: 15px;
+  background: var(--appleGreen);
+  border-bottom-left-radius: 15px;
+  animation-name:fadeIn;
+  animation-duration:.05s;
+}
+
+.localMessage > .tail:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -1px;
+  right: -10px;
+  height: 20px;
+  width: 10px;
+  background: white;
+  border-bottom-left-radius: 15px;
+}
+
+@keyframes fadeIn{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  height:36px;
+  width:100%;
+  padding: 5px 16px 5px 14px;
+  bottom: 0%;
+  left:0%;
+  z-index:2;
+  background-color:white;
+}
+
+.cameraAppstoreIcons {
+  position:relative;
+  width:25%;
+  width:28%;
+}
+
+.cameraAppstoreIcons > svg {position:absolute;}
+
+.chevronSquareFill {
+  position:relative;
+  width:7.5%;
+  transform:translateX(100%);
+  opacity:0;
+}
+
+.chevronSquareFill > svg {position:absolute;}
+
+/* Typing Input */
+.inputWrapper {
+  z-index: 3;
+  width:195px;
+  position: absolute;
+  right:14px;
+  bottom:4px;
+  font-size:15px;
+  font-weight:300;
+  border-radius: 15px;
+  background-color: white;
+  border:solid 2px var(--lightGrey);
+  padding: 2px;
+  display: grid;
+  grid-template-columns: 1fr 26px;
+  grid-gap: 5px;
+  align-items: center;
+}
+
+.inputBox{padding: 2px 6px;}
+
+.inputBox > span{line-height:.5;}
+
+.inputBox.cursor:before {
+  content:"|";
+  color:var(--appleBlue);
+  position:absolute;
+  transform:scale(1.5) translateY(-5%);
+  animation-name:blink;
+  animation-duration:1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  45%{opacity:1;}
+  55%{opacity:0;}
+  95%{opacity:0;}
+  100%{opacity:1;}
+}
+
+.inputBox.cursor:after {
+  content:"\00a0Text Mesage";
+  color:var(--lightGrey);
+}
+
+.inputBox.typing:after {
+  content:"|";
+  color:var(--appleBlue);
+  position:absolute;
+  transform:scale(1.5) translateY(10%);
+  line-height:.8;
+}
+
+.sendBtn {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  position:relative;
+  height:100%;
+  width:100%;
+  margin-top:auto; 
+}
+
+.sendBtn > svg {margin-left:auto;}
