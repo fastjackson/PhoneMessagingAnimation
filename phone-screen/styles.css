@@ -65,7 +65,7 @@ body {
   transform: translateX(-50%);
   background-size: 100%;
   background-position: center center;
-  border: solid 2px rgba(255,255,255,.6);
+  border: solid 2px rgba(255,255,255,.8);
   border-radius: 50%;
   /* User profile image inserted by JS here */
 }
