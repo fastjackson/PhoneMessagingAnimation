@@ -1,12 +1,40 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-// Set user photo (top center)
-var userPhoto = "./cat.jpg"
-// (Photo by Alina Vilchenko from Pexels - https://www.instagram.com/secretly_canadian/ )
-$("#photo").css(`background-image`,`url(${userPhoto})`)
+// Set user photo array
+var userPhotos = ["./cat.jpg","./cat.jpg","./cat.jpg"]
 
-// Set username (below photo)
+// Set maximum user photo array length. (Maximum 5 Supported)
+var MaxGroupNumber = 5
+userPhotos.slice(0, MaxGroupNumber);
+
+// Add photos (Photo by Alina Vilchenko from Pexels - https://www.instagram.com/secretly_canadian/ )
+photoHtml = []
+photoSpacings = [
+  [0],
+  [0],
+  [5, -5],
+  [10, 0, -10],
+  [15, 5, -5, -15],
+  [20, 10, 0, -10, -20]
+]
+for (let i = 0; i < userPhotos.length; i++){
+  photoHtml = photoHtml + 
+  `<div 
+    class="photo" 
+    style="
+    background-image:url(${userPhotos[i]});
+    transform: translateX(calc( -50% + ${photoSpacings[userPhotos.length][i]}px) );
+    ">
+  </div>`
+};
+$("#photoWrapper").html(photoHtml)
+
+// Set username for 1 recipient (below photo)
 var username = "My Friend's Name"
+// Automatic username for groups
+if ( userPhotos.length > 1 ){
+  username = `${userPhotos.length} People`
+}
 $("#username").html(username)
 
 // Set default typing speed

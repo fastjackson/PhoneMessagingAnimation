@@ -50,16 +50,23 @@ body {
 
 .leftCaret > svg {position:absolute;}
 
+.photoWrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 3%;
+}
+
 .photo{
   position: absolute;
-  width: 16%;
-  height: 68%;
-  top: 3%;
+  width: 45px;
+  height: 45px;
   left: 50%;
   transform: translateX(-50%);
-  clip-path: circle(44% at 50% 50%);
-  background-size: 90%;
+  background-size: 100%;
   background-position: center center;
+  border: solid 2px rgba(255,255,255,.6);
+  border-radius: 50%;
   /* User profile image inserted by JS here */
 }
 
