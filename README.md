@@ -11,7 +11,7 @@ https://user-images.githubusercontent.com/70291/131207930-6db10345-b55b-4d32-857
    3. Add any border or framing on your page.
 
 
-2. Customize the animation by modifying variables shown at the beginning of the animation.js file. Support for modifying the username, the user's image, typing speed, number of animation loops, and message content is included.
+2. Customize the animation by modifying variables shown at the beginning of the animation.js file. Support for modifying the username, the user images, typing speed, number of animation loops, and message content is included.
 
 ## Details
 Check the commented instructions inside the animation.js file carefully before modifying or adding messages. More details below.
